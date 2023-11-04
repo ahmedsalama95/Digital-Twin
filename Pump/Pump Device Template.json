@@ -1,0 +1,150 @@
+[
+  {
+    "@id": "dtmi:com:example:PumpDeviceTemplate;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:com:example:ConnectedCoffeeMaker:TandemConnection",
+        "@type": [
+          "Property",
+          "Cloud",
+          "StringValue"
+        ],
+        "comment": "tandem stream connection",
+        "displayName": {
+          "en": "Tandem Connection "
+        },
+        "name": "TandemConnection",
+        "schema": "string"
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Set Maintenance Mode"
+        },
+        "name": "SetMaintenanceMode"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue",
+          "Velocity"
+        ],
+        "comment": "Vibration Value",
+        "displayName": {
+          "en": "Pump Vibration"
+        },
+        "name": "PumpVibration",
+        "schema": "double",
+        "decimalPlaces": 2,
+        "displayUnit": {
+          "en": "mm/s"
+        },
+        "maxValue": 10,
+        "minValue": 1
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "State"
+        ],
+        "displayName": {
+          "en": "Working"
+        },
+        "name": "Working",
+        "schema": {
+          "@type": "Enum",
+          "enumValues": [
+            {
+              "displayName": {
+                "en": "Working"
+              },
+              "enumValue": "working",
+              "name": "Working"
+            },
+            {
+              "displayName": {
+                "en": "Not Working"
+              },
+              "enumValue": "notworking",
+              "name": "NotWorking"
+            }
+          ],
+          "valueSchema": "string"
+        }
+      },
+      {
+        "@type": [
+          "Property",
+          "Initialized",
+          "NumberValue",
+          "Velocity"
+        ],
+        "displayName": {
+          "en": "Optimal Value"
+        },
+        "name": "OptimalValue",
+        "schema": "float",
+        "writable": true,
+        "decimalPlaces": 0,
+        "initialValue": 3,
+        "maxValue": 5,
+        "minValue": 1
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Start Working"
+        },
+        "name": "StartWorking"
+      },
+      {
+        "@id": "dtmi:com:example:PumpDeviceTemplate:PumpMinVibration",
+        "@type": [
+          "Property",
+          "Cloud",
+          "Velocity",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Pump Min Vibration"
+        },
+        "name": "PumpMinVibration",
+        "schema": "float",
+        "decimalPlaces": 0,
+        "displayUnit": {
+          "en": "mm/s"
+        },
+        "minValue": 2.8
+      },
+      {
+        "@id": "dtmi:com:example:PumpDeviceTemplate:PumpMaxVibration",
+        "@type": [
+          "Property",
+          "Cloud",
+          "Velocity",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Pump Max Vibration"
+        },
+        "name": "PumpMaxVibration",
+        "schema": "float",
+        "decimalPlaces": 0,
+        "displayUnit": {
+          "en": "mm/s"
+        },
+        "maxValue": 4.8
+      }
+    ],
+    "displayName": {
+      "en": "Pump Device Template"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]
