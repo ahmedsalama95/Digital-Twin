@@ -28,6 +28,7 @@ namespace Pump
         private double _OptimalValue = 3;
         
         private string _Working = "Working";
+        private bool _maintenanceState = false;
         
         
         
@@ -153,7 +154,7 @@ namespace Pump
                 Console.WriteLine($" * Property: Update - {{\"{propertyName} \": {optimalVib}mm/s}} is {StatusCode.InProgress}.");
 
                 //Update the optimal temperature
-                _optimalValue = optimalVib;
+                _OptimalValue = optimalVib;
 
                 //Update reported property to Completed
                 string jsonProperty = $"{{ \"{propertyName}\": {{ \"value\": {optimalVib}, \"ac\": {(int)StatusCode.Completed}, " +
