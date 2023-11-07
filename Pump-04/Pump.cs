@@ -58,7 +58,7 @@ namespace Pump
             while (!cancellationToken.IsCancellationRequested)
             {
                 await SendTelemetryAsync(cancellationToken);
-                await Task.Delay(20000, cancellationToken);
+                await Task.Delay(100000, cancellationToken);
             }
         }
         //</Workflow>
